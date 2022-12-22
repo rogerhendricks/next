@@ -6,9 +6,9 @@ from datetime import date, datetime
 # shared properties
 class DeviceBase(BaseModel):
     id: int
-    manufacturer: str
+    company: str
     model: str
-    dev_type: str
+    device_type: str
     hazard: Optional[bool] = False
     mri: Optional[bool] = False
     created_at: Optional[date] = datetime.now().date()
@@ -19,9 +19,9 @@ class DeviceBase(BaseModel):
 
 # this will be used to validate data while creating a Device
 class DeviceCreate(DeviceBase):
-    manufacturer: str
+    company: str
     model: str
-    dev_type: str
+    device_type: str
     hazard: Optional[bool] = False
     mri: Optional[bool] = False
 
@@ -31,9 +31,9 @@ class DeviceCreate(DeviceBase):
 
 # this will be used to format the response to not to have id, etc.
 class ShowDevice(DeviceBase):
-    manufacturer: str
+    company: str
     model: str
-    dev_type: str
+    device_type: str
     hazard: Optional[bool] = False
     mri: Optional[bool] = False
 
